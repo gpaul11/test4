@@ -1,15 +1,3 @@
-/**
- * /** 
- *Student Honour Pledge:
-
-I acknowledge Seneca College's academic integrity policy.
-On my honor, I have neither given or received unauthorized aid on this test.
-Name: Gunjan Kaur Paul
-Student Number: 156409211
- https://copper-sea-urchin-tie.cyclic.app 
-https://github.com/gpaul11/test4
-* 
- */
 var express = require("express");
 var app = express();
 var data_prep = require("./data_prep.js");
@@ -55,6 +43,8 @@ app.get("/CPA", (req,res)=>{
 app.get("/highGPA", (req, res)=>{
     data_prep.highGPA().then((data)=>{
     res.render("student",{data:data});
+    }).catch(function (params) {
+        res.json({error:params});
     });
 });
 

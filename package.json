@@ -2,7 +2,10 @@
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.25.8"
   },
   "scripts": {
     "start": "node server.js"
@@ -10,7 +13,6 @@
   "name": "test-4",
   "version": "1.0.0",
   "main": "data_prep.js",
-  "devDependencies": {},
   "author": "Gunjan Paul Kaur",
   "license": "ISC",
   "description": ""

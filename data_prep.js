@@ -69,12 +69,17 @@ exports.cpa = () => {
 
 module.exports.highGPA = () => {
   return new Promise((resolve, reject) => {
-    Student.findAll({
-        where:{gpa:[sequelize.fn('max',sequelize.col('gpa'))]}
+    Student.max('gpa').then((max)=>{
+      Student.findAll({
+        where:{gpa:max}
     }).then(function (data) {
-resolve(data);
+resolve(data[0]);
       }).catch(function () {
         reject("no results returned");
       });
   });
+    }).catch(function () {
+      reject("no results returned");      
+    })
+
 };
